@@ -27,6 +27,12 @@ class SignupActivity : AppCompatActivity() {
         val editTextName = findViewById<EditText>(R.id.editTextName)
         val editTextSurname = findViewById<EditText>(R.id.editTextSurname)
         val buttonSignup = findViewById<Button>(R.id.buttonSignup)
+        val buttonLogin = findViewById<Button>(R.id.buttonLogin)
+
+        buttonLogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         buttonSignup.setOnClickListener {
             val email = editTextEmail.text.toString().trim()
@@ -81,4 +87,5 @@ class SignupActivity : AppCompatActivity() {
         editor.putString("userId", userId)
         editor.apply()
     }
+
 }
