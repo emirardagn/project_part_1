@@ -1,11 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
+
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.example.project_part_1"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.project_part_1"
@@ -36,7 +38,9 @@ android {
 }
 
 dependencies {
-
+    implementation (platform("com.google.firebase:firebase-bom:32.0.0") )// Firebase BOM'un en son sürümü
+    implementation ("com.google.firebase:firebase-auth")
+    implementation ("com.google.firebase:firebase-firestore")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
