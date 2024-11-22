@@ -16,9 +16,11 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Kullanıcı ID'sini kontrol et
         val savedUserId = getSavedUserId()
         if (savedUserId != null) {
-            navigateToMainActivity()
+            // Kullanıcı giriş yaptıysa direkt ProfileActivity'ye yönlendir
+            navigateToProfileActivity()
             return
         }
 
@@ -36,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
             val password = editTextPassword.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Email ve şifre boş olamaz!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Email and password cannot be empty!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -45,14 +47,13 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         val userId = auth.currentUser?.uid ?: ""
                         saveUserIdLocally(userId)
-                        Toast.makeText(this, "Done!", Toast.LENGTH_SHORT).show()
-                        navigateToMainActivity()
+                        Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+                        navigateToProfileActivity()
                     } else {
                         Toast.makeText(this, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
         }
-
 
         buttonSignup.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
@@ -72,9 +73,9 @@ class LoginActivity : AppCompatActivity() {
         return sharedPreferences.getString("userId", null)
     }
 
-    private fun navigateToMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+    private fun navigateToProfileActivity() {
+        val intent = Intent(this, ProfileActivity::class.java)
         startActivity(intent)
-        finish()
+        finish() // LoginActivity'yi kapat
     }
 }

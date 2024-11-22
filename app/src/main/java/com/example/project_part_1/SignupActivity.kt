@@ -45,7 +45,7 @@ class SignupActivity : AppCompatActivity() {
             }
 
             if (password.length < 6) {
-                Toast.makeText(this, "Password's long must be at least 6!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Password's length must be at least 6!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -62,12 +62,13 @@ class SignupActivity : AppCompatActivity() {
                         firestore.collection("users").document(userId)
                             .set(user)
                             .addOnSuccessListener {
-                                Toast.makeText(this, "Done!", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
 
+                                // Kullanıcı ID'sini yerel olarak kaydet
                                 saveUserIdLocally(userId)
 
-
-                                val intent = Intent(this, MainActivity::class.java)
+                                // ProfileActivity'ye geçiş
+                                val intent = Intent(this, ProfileActivity::class.java)
                                 startActivity(intent)
                                 finish()
                             }
@@ -81,11 +82,11 @@ class SignupActivity : AppCompatActivity() {
 
         }
     }
+
     private fun saveUserIdLocally(userId: String) {
         val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString("userId", userId)
         editor.apply()
     }
-
 }
