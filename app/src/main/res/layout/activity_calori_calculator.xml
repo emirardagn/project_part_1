@@ -26,17 +26,14 @@
             android:layout_height="wrap_content"
             android:hint="Height (cm)"
             android:inputType="number"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/rounded_input"/>
-
+            android:layout_marginBottom="12dp"/>
         <EditText
             android:id="@+id/editWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Weight (kg)"
             android:inputType="number"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/rounded_input"/>
+            android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/editAge"
@@ -44,15 +41,13 @@
             android:layout_height="wrap_content"
             android:hint="Age"
             android:inputType="number"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/rounded_input"/>
+            android:layout_marginBottom="12dp"/>
 
         <Spinner
             android:id="@+id/spinnerActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/rounded_input"/>
+            android:layout_marginBottom="12dp"/>
 
         <RadioGroup
             android:id="@+id/radioGroupGender"
