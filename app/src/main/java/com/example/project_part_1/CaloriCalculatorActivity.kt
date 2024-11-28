@@ -45,7 +45,7 @@ class CaloriCalculatorActivity : AppCompatActivity() {
             }
 
             if (height != null && weight != null && age != null && selectedGender != null) {
-                val bmr = if (selectedGender == "Kadın") {
+                val bmr = if (selectedGender == "Female") {
                     (10 * weight + 6.25 * height - 5 * age - 161) * activityLevel
                 } else {
                     (10 * weight + 6.25 * height - 5 * age + 5) * activityLevel
