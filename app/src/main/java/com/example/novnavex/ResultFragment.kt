@@ -31,8 +31,5 @@ class ResultFragment : Fragment() {
 
         binding.textDailyCalories.text = "Your daily calorie need is: $dailyCalories kcal"
 
-        binding.buttonRecalculate.setOnClickListener {
-            findNavController().navigate(R.id.action_ResultFragment_to_CalculatorFragment)
-        }
     }
 }
