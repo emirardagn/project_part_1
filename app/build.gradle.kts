@@ -55,6 +55,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)  // ViewModel
     implementation(libs.androidx.lifecycle.runtime.ktx)    // Optional, for lifecycle-aware components
 
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

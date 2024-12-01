@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
+    <!-- Basic Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Theme Colors -->
+    <color name="primary">#6200EE</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="primary_light">#BB86FC</color>
+
+    <!-- Secondary Theme Colors -->
+    <color name="secondary">#03DAC5</color>
+    <color name="secondary_dark">#018786</color>
+    <color name="secondary_light">#66FFF9</color>
+
+    <!-- Neutral Colors -->
+    <color name="light_gray">#F5F5F5</color>
+    <color name="medium_gray">#E0E0E0</color>
+    <color name="dark_gray">#9E9E9E</color>
+
+    <!-- Accent Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="error">#F44336</color>
+    <color name="warning">#FF9800</color>
+    <color name="info">#2196F3</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FF000000</color> <!-- Black -->
+    <color name="text_secondary">#8A000000</color> <!-- Black with opacity -->
+    <color name="text_on_primary">#FFFFFFFF</color> <!-- White for primary background -->
+
+    <!-- Background Colors -->
+    <color name="background_light">#FAFAFA</color>
+    <color name="background_dark">#121212</color>
+    <color name="surface">#FFFFFF</color> <!-- Elevated surface color -->
+    <color name="surface_dark">#1E1E1E</color> <!-- Surface for dark mode -->
 </resources>
+

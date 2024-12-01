@@ -36,7 +36,7 @@ class MainFragment :Fragment(){
 
 
             var playerName = binding.textInputLayout.editText?.text.toString()
-            view.findNavController().navigate(MainFragmentDirections.actionMainFragmentToCalculatorFragment(playerName))
+            view.findNavController().navigate(MainFragmentDirections.actionMainFragmentToAchievementFragment())
             //view.findNavController().navigate(R.id.action_mainFragment_to_gameFragment)
         }
     }
