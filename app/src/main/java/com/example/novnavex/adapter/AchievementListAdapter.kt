@@ -30,8 +30,10 @@ class AchievementListAdapter(
             binding.achievement = achievement
             binding.root.setOnClickListener { onItemClick(achievement) }
 
+            // Use Glide to load the image
             Glide.with(binding.achievementImage.context)
-                .load(achievement.imageResId)  // This will work for drawable resources
+                .load(achievement.imageResId) // Ensure this is a valid drawable or URL
+                .error(R.drawable.error) // Optional error image
                 .into(binding.achievementImage)
 
             // Set the color of the achievement's status

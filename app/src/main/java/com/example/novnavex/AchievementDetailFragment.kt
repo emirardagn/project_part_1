@@ -43,10 +43,13 @@ class AchievementDetailFragment : Fragment() {
                     // Bind the data
                     binding.achievement = achievement
 
-                    // Load the image
+                    // Load the image using Glide
                     Glide.with(requireContext())
                         .load(achievement.imageResId)
-                        .into(binding.achievementImage)
+                        .placeholder(R.drawable.ic_launcher_background)
+                        .error(R.drawable.error)
+                        .into(binding.achievementDetailImage)
+
 
                     // Set status color
                     binding.achievementStatus.setTextColor(
