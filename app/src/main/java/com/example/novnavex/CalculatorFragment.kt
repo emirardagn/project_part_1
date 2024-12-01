@@ -20,6 +20,11 @@ class CalculatorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_calculator, container, false)
+        // Retrieve the username from the arguments
+        val username = arguments?.getString("userName") ?: "Guest"  // Default to "Guest" if null
+
+        // Use the username (e.g., set it in a TextView)
+        binding.greetingTextView.text = "Hello, $username"  // Assuming you have a TextView with id usernameTextView
         return binding.root
     }
 

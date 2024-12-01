@@ -19,7 +19,7 @@
             android:id="@+id/helloTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello, Guest!!"
+            android:text="Hello, This is Main Page, we will add some content about gym in final project"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
