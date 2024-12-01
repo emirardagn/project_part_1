@@ -55,7 +55,7 @@ class AchievementDetailFragment : Fragment() {
                     binding.achievementStatus.setTextColor(
                         when (achievement.status) {
                             "Done" -> Color.GREEN
-                            "Pending" -> Color.YELLOW
+                            "Pending" -> Color.MAGENTA
                             "Not Taken" -> Color.RED
                             else -> Color.GRAY
                         }

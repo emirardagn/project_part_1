@@ -42,7 +42,7 @@ class AchievementListAdapter(
                     binding.achievementStatus.setTextColor(Color.GREEN) // Set color to green for Done
                 }
                 "Pending" -> {
-                    binding.achievementStatus.setTextColor(Color.YELLOW) // Set color to yellow for Pending
+                    binding.achievementStatus.setTextColor(Color.MAGENTA) // Set color to yellow for Pending
                 }
                 "Not Taken" -> {
                     binding.achievementStatus.setTextColor(Color.RED) // Set color to red for Not Taken
