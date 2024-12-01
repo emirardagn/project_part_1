@@ -19,6 +19,9 @@ class UserViewModel:ViewModel() {
             Achievement(3,"Rest",	"Sweet Dreams","Sleep at least 7-8 hours","Pending",R.drawable.sleep),
             Achievement(4,"Food",	"No Fast Food","Eat only homemade meal","Pending",R.drawable.food),
             Achievement(5,"Food",	"Caffeine Addiction","Drink a cup of coffee","Pending",R.drawable.cofee),
+            Achievement(6, "Food", "Perfect Diet", "Consume a balanced meal with all macronutrients (protein, carbs, fats)", "Pending", R.drawable.diet),
+            Achievement(7, "Workout", "Core Task", "Perform a 1-minute plank", "Pending", R.drawable.plank),
+            Achievement(8, "Rest", "Digital Detoxer", "Reduce screen time", "Pending", R.drawable.screen_time),
             )
 
     }

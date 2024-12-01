@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <!-- Top Layout -->
     <LinearLayout
         android:id="@+id/topLayout"
@@ -61,44 +62,50 @@
             android:padding="8dp"
             android:elevation="4dp"
             android:layout_marginBottom="16dp"
-            android:clipToPadding="false"
             android:weightSum="3">
 
+            <!-- Home Button -->
             <Button
                 android:id="@+id/mainButton"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:text="Main"
-                android:backgroundTint="@color/primary"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text="Home"
+                android:textSize="14sp"
                 android:textColor="@color/white"
+                android:gravity="center"
                 android:layout_margin="4dp"
-                android:elevation="2dp" />
+                android:drawablePadding="8dp" />
 
+            <!-- Calculator Button -->
             <Button
                 android:id="@+id/calculatorButton"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.9"
-                android:text="Calory"
-                android:backgroundTint="@color/primary_dark"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text="Calculator"
+                android:textSize="14sp"
                 android:textColor="@color/white"
+                android:gravity="center"
                 android:layout_margin="4dp"
-                android:elevation="2dp" />
+                android:drawablePadding="8dp" />
 
+            <!-- Achievements Button -->
             <Button
                 android:id="@+id/achievementButton"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_weight="1"
-                android:text="Achievement"
-                android:backgroundTint="@color/secondary"
+                android:text="Achievements"
+                android:textSize="14sp"
                 android:textColor="@color/white"
+                android:gravity="center"
                 android:layout_margin="4dp"
-                android:elevation="2dp" />
-
+                android:drawablePadding="8dp" />
         </LinearLayout>
     </LinearLayout>
+
+    <!-- Navigation Host -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/myNavHostFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -110,4 +117,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:navGraph="@navigation/navigation" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
