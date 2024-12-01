@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.novnavex.databinding.FragmentAchievementDetailBinding
 import com.example.novnavex.viewmodel.UserViewModel
@@ -64,7 +65,14 @@ class AchievementDetailFragment : Fragment() {
                     // Handle the button click to change status
                     binding.btnChangeStatus.setOnClickListener {
                         val newStatus = if (achievement.status == "Done") "Pending" else "Done"
+                        // Update the status in ViewModel
                         viewModel.updateAchievementStatus(achievement.id, newStatus)
+
+                        // Reload the fragment (Navigate to the same fragment)
+                        findNavController().navigateUp()
+                        findNavController().navigate(R.id.achievementDetailFragment, Bundle().apply {
+                            putInt("achievementId", achievement.id)  // Pass the achievementId back
+                        })
                     }
                 }
             })
