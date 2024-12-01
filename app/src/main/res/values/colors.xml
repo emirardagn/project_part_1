@@ -36,5 +36,6 @@
     <color name="background_dark">#121212</color>
     <color name="surface">#FFFFFF</color> <!-- Elevated surface color -->
     <color name="surface_dark">#1E1E1E</color> <!-- Surface for dark mode -->
+    <color name="colorPrimary">#6200EE</color>
 </resources>
 
