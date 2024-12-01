@@ -4,52 +4,30 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-<variable
+    <variable
     name="viewModel"
     type="com.example.novnavex.viewmodel.UserViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".MainFragment">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
-            android:layout_width="409dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nameInputView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Your Name"
-                android:text="@={viewModel.userName}"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/logInButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Log In"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-
+        <!-- Display "Hello, username" -->
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/helloTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:text='@{"Welcome, " + viewModel.userName}'
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Hello, Guest!!"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="18sp"
+            />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
