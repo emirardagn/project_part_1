@@ -37,6 +37,7 @@ android {
 
     buildFeatures{
         dataBinding = true
+        viewBinding = true
     }
 }
 
@@ -56,6 +57,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)    // Optional, for lifecycle-aware components
 
     implementation(libs.glide)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.recyclerview)
     annotationProcessor(libs.compiler)
 
     testImplementation(libs.junit)

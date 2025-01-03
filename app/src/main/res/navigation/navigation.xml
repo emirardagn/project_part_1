@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_achievementFragment"
             app:destination="@id/achievementFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_calorieFragment"
+            app:destination="@id/calorieFragment" />
     </fragment>
 
     <fragment
@@ -32,6 +35,9 @@
         <action
             android:id="@+id/action_CalculatorFragment_to_achievementFragment"
             app:destination="@id/achievementFragment" />
+        <action
+            android:id="@+id/action_CalculatorFragment_to_calorieFragment"
+            app:destination="@id/calorieFragment" />
     </fragment>
 
     <fragment
@@ -61,7 +67,28 @@
         <action
             android:id="@+id/action_achievementFragment_to_achievementDetailFragment"
             app:destination="@id/achievementDetailFragment" />
+        <action
+            android:id="@+id/action_achievementFragment_to_calorieFragment"
+            app:destination="@id/calorieFragment" />
     </fragment>
+
+
+    <fragment
+        android:id="@+id/calorieFragment"
+        android:name="com.example.novnavex.CalorieFragment"
+        android:label="fragment_calorie"
+        tools:layout="@layout/fragment_calorie" >
+        <action
+            android:id="@+id/action_calorieFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_calorieFragment_to_CalculatorFragment"
+            app:destination="@id/CalculatorFragment" />
+        <action
+            android:id="@+id/action_calorieFragment_to_achievementFragment"
+            app:destination="@id/achievementFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/achievementDetailFragment"
         android:name="com.example.novnavex.AchievementDetailFragment"

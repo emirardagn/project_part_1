@@ -30,11 +30,13 @@ class MainActivity : AppCompatActivity() {
         val mainButton = findViewById<Button>(R.id.mainButton)
         val profileButton = findViewById<Button>(R.id.calculatorButton)
         val achievementButton = findViewById<Button>(R.id.achievementButton)
+        val calorieButton = findViewById<Button>(R.id.calorieButton)
 
         mainButton.setOnClickListener {
             // Navigate to Main Fragment
             navController.navigate(R.id.mainFragment)
         }
+
 
         profileButton.setOnClickListener {
             // Get the username from the UserViewModel
@@ -55,6 +57,11 @@ class MainActivity : AppCompatActivity() {
             // Navigate to Achievement Fragment
 
             navController.navigate(R.id.achievementFragment)
+        }
+
+        calorieButton.setOnClickListener {
+            // Navigate to calorie Fragment
+            navController.navigate(R.id.calorieFragment)
         }
 
         // Optional: Handle window insets for edge-to-edge layout

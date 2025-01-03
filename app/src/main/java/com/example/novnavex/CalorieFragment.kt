@@ -10,23 +10,20 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.novnavex.data.Achievement
-import com.example.novnavex.databinding.FragmentAchievementBinding
+import com.example.novnavex.databinding.FragmentCalorieBinding
 import com.example.novnavex.viewmodel.UserViewModel
-import  com.example.novnavex.adapter.AchievementListAdapter
+import  com.example.novnavex.adapter.CalorieListAdapter
 
-class AchievementFragment : Fragment() {
-    private lateinit var binding: FragmentAchievementBinding
+class  CalorieFragment : Fragment() {
+    private lateinit var binding: FragmentCalorieBinding
     private val viewModel: UserViewModel by activityViewModels()  // Use shared ViewModel
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_achievement,  // Your layout file
+            R.layout.fragment_calorie,  // Your layout file
             container,
             false
         )
@@ -38,15 +35,13 @@ class AchievementFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Observe achievements data from ViewModel
-        viewModel.achievements.observe(viewLifecycleOwner) { achievements ->
-            val adapter = AchievementListAdapter(achievements) { achievement ->
-                val action = AchievementFragmentDirections
-                    .actionAchievementFragmentToAchievementDetailFragment(achievement.id)
-                view.findNavController().navigate(action)
+        viewModel.calories.observe(viewLifecycleOwner) { calories ->
+            val adapter = CalorieListAdapter(calories) { calorie ->
+                val action = calorie
             }
 
             // Set up RecyclerView with the updated achievements list
-            binding.achievementRecyclerView.apply {
+            binding.calorieRecyclerView.apply {
                 this.adapter = adapter
                 layoutManager = LinearLayoutManager(context)
             }

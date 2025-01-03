@@ -5,11 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.novnavex.R
 import com.example.novnavex.data.Achievement
+import com.example.novnavex.data.Calorie
 
 class UserViewModel:ViewModel() {
     val userName = MutableLiveData<String>()
     private val _achievements = MutableLiveData<List<Achievement>>()
     val achievements: LiveData<List<Achievement>> = _achievements
+    private val _calories = MutableLiveData<List<Calorie>>()
+    val calories: LiveData<List<Calorie>> = _calories
 
     init {
         // Initialize with dummy data
@@ -23,6 +26,10 @@ class UserViewModel:ViewModel() {
             Achievement(7, "Workout", "Core Task", "Perform a 1-minute plank", "Pending", R.drawable.plank),
             Achievement(8, "Rest", "Digital Detoxer", "Reduce screen time", "Pending", R.drawable.screen_time),
             )
+        _calories.value = listOf(
+            Calorie(1,"CannedFruit","Canned Blueberries",100,88),
+            Calorie(2,"PotatoProducts","Rosemary Potatoes",100,93)
+        )
 
     }
 
@@ -37,11 +44,20 @@ class UserViewModel:ViewModel() {
         }
     }
 
+
     // Function to get an achievement by ID
     fun getAchievementById(id: Int): LiveData<Achievement?> {
         val achievementLiveData = MutableLiveData<Achievement?>()
         val achievement = _achievements.value?.find { it.id == id }
         achievementLiveData.value = achievement
         return achievementLiveData
+    }
+
+    // Function to get an calorie by ID
+    fun getCalorieById(id: Int): LiveData<Calorie?> {
+        val calorieLiveData = MutableLiveData<Calorie?>()
+        val calorie = _calories.value?.find { it.id == id }
+        calorieLiveData.value = calorie
+        return calorieLiveData
     }
 }
