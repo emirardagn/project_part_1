@@ -1,3 +1,4 @@
+
 package com.example.novnavex
 
 import android.os.Bundle
@@ -35,8 +36,9 @@ class  CalorieFragment : Fragment() {
 
         // Observe achievements data from ViewModel
         viewModel.calories.observe(viewLifecycleOwner) { calories ->
-            val adapter = CalorieListAdapter(calories) { calorie ->
-                val action = calorie
+            val adapter = CalorieListAdapter(calories.toMutableList()) { calorie ->
+                // Handle the delete action
+                viewModel.deleteFood(calorie)  // Remove from ViewModel
             }
 
             // Set up RecyclerView with the updated achievements list
@@ -61,15 +63,6 @@ class  CalorieFragment : Fragment() {
             viewModel.resetFoods()  // Reset the list of foods
         }
 
-        // Set up the "Delete Food" button click listener
-        binding.deleteFoodButton.setOnClickListener {
-            // In this case, you would need some way to select which food to delete
-            // For now, we can assume a specific food item is selected
-            val foodToDelete = viewModel.calories.value?.get(0)  // Example: Delete the first food item
-            foodToDelete?.let {
-                viewModel.deleteFood(it)  // Delete the food
-            }
-        }
     }
 
 

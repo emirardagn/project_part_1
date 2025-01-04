@@ -66,26 +66,13 @@
                 android:text="Reset Foods"
                 android:textStyle="bold"
                 app:cornerRadius="16dp"
-                app:layout_constraintBottom_toTopOf="@id/delete_food_button"
+                app:icon="@drawable/reset"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:backgroundTint="@color/red"
                 android:textColor="@android:color/white" />
 
-            <!-- Delete Food Button -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/delete_food_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Delete Food"
-                android:textStyle="bold"
-                app:cornerRadius="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:backgroundTint="@color/orange"
-                android:textColor="@android:color/white" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

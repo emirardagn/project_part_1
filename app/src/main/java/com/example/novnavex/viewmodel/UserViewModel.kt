@@ -79,6 +79,7 @@ class UserViewModel:ViewModel() {
         updateTotalCalories()
     }
 
+
     // Reset all foods (clear the list)
     fun resetFoods() {
         _calories.value = emptyList()
