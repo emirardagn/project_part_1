@@ -86,9 +86,14 @@ class UserViewModel:ViewModel() {
         updateTotalCalories()
     }
 
-    // Calculate and update the total calories
     private fun updateTotalCalories() {
-        val total = _calories.value?.sumOf { it.cal } ?: 0
+        val total = _calories.value?.sumOf {
+            // Calculate calories based on portion size and calories per 100 grams
+            (it.cal * it.portion) / 100.0
+        }?.let {
+            // Round the result and convert to integer
+            it.toInt()
+        } ?: 0
         _totalCalories.value = total
     }
 

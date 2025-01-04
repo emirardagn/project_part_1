@@ -12,21 +12,25 @@ import com.example.novnavex.databinding.ItemCalorieBinding
 
 class CalorieListAdapter(
     private val calories: List<Calorie>,
-    //private val onItemClick: (Calorie) -> Unit,
     private val onItemDelete: (Calorie) -> Unit
 ) : RecyclerView.Adapter<CalorieListAdapter.CalorieViewHolder>() {
 
     inner class CalorieViewHolder(private val binding: ItemCalorieBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(calorie: Calorie) {
+            // Format the calorie value
+            val formattedCalories = "100g: ${calorie.cal} cal"
+            binding.calorieCal.text = formattedCalories
+            val formattedPortion = "Portion: ${calorie.portion} gram"
+            binding.caloriePortion.text = formattedPortion
+
+            // Bind the remaining properties of the calorie object (optional)
             binding.calorie = calorie
-            //binding.root.setOnClickListener { onItemClick(calorie) }
 
             // Handle delete button click
             binding.deleteButton.setOnClickListener {
                 onItemDelete(calorie) // Trigger delete callback
             }
-
         }
     }
 
@@ -49,4 +53,3 @@ class CalorieListAdapter(
 
     override fun getItemCount(): Int = calories.size
 }
-
