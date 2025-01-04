@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx) // Navigation fragment dependency
     implementation(libs.androidx.navigation.ui.ktx) // Navigation UI dependency
+    implementation(libs.opencsv)
+
 
     // Lifecycle dependencies
     implementation(libs.androidx.lifecycle.livedata.ktx)   // LiveData

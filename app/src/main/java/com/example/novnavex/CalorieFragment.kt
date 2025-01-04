@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.novnavex.databinding.FragmentCalorieBinding
@@ -45,6 +44,11 @@ class  CalorieFragment : Fragment() {
                 this.adapter = adapter
                 layoutManager = LinearLayoutManager(context)
             }
+        }
+        // Set up the "Add Food" button click listener
+        binding.addFoodButton.setOnClickListener {
+            // Navigate to AddFoodFragment
+            it.findNavController().navigate(R.id.action_calorieFragment_to_addFoodFragment)
         }
     }
 

@@ -40,5 +40,7 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="secondaryy">#FF5722</color>
+    <color name="teal_700">#00897B</color>
+
 </resources>
 

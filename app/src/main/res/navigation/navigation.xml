@@ -87,6 +87,9 @@
         <action
             android:id="@+id/action_calorieFragment_to_achievementFragment"
             app:destination="@id/achievementFragment" />
+        <action
+            android:id="@+id/action_calorieFragment_to_addFoodFragment"
+            app:destination="@id/addFoodFragment" />
     </fragment>
 
     <fragment
@@ -100,5 +103,15 @@
         <action
             android:id="@+id/action_achievementDetailFragment_to_achievementFragment"
             app:destination="@id/achievementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.example.novnavex.AddFoodFragment"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" >
+
+        <action
+            android:id="@+id/action_addFoodFragment_to_calorieFragment"
+            app:destination="@id/calorieFragment" />
     </fragment>
 </navigation>

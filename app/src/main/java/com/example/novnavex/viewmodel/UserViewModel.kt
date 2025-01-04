@@ -44,7 +44,9 @@ class UserViewModel:ViewModel() {
         }
     }
 
+    fun addFood(id: String, quantity: Int) {
 
+    }
     // Function to get an achievement by ID
     fun getAchievementById(id: Int): LiveData<Achievement?> {
         val achievementLiveData = MutableLiveData<Achievement?>()
@@ -59,5 +61,12 @@ class UserViewModel:ViewModel() {
         val calorie = _calories.value?.find { it.id == id }
         calorieLiveData.value = calorie
         return calorieLiveData
+    }
+
+    // Add a food to the list
+    fun addFood(calorie: Calorie) {
+        val currentList = _calories.value?.toMutableList() ?: mutableListOf()
+        currentList.add(calorie)
+        _calories.value = currentList
     }
 }
