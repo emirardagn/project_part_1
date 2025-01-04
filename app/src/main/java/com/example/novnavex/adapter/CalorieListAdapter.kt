@@ -4,7 +4,9 @@ package com.example.novnavex.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.novnavex.MyDiffCallback
 import com.example.novnavex.R
 import com.example.novnavex.data.Calorie
 import com.example.novnavex.databinding.ItemCalorieBinding
@@ -13,7 +15,7 @@ import com.example.novnavex.databinding.ItemCalorieBinding
 class CalorieListAdapter(
     private val calories: List<Calorie>,
     private val onItemDelete: (Calorie) -> Unit
-) : RecyclerView.Adapter<CalorieListAdapter.CalorieViewHolder>() {
+)  : ListAdapter<Calorie, CalorieListAdapter.CalorieViewHolder>(MyDiffCallback()) {
 
     inner class CalorieViewHolder(private val binding: ItemCalorieBinding) :
         RecyclerView.ViewHolder(binding.root) {
