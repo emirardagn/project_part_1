@@ -45,10 +45,30 @@ class  CalorieFragment : Fragment() {
                 layoutManager = LinearLayoutManager(context)
             }
         }
+        // Observe the total calories LiveData from ViewModel
+        viewModel.totalCalories.observe(viewLifecycleOwner) { totalCalories ->
+            // Update the TextView that shows the total calories
+            binding.totalCaloriesTextView.text = "Total Calories: $totalCalories"
+        }
         // Set up the "Add Food" button click listener
         binding.addFoodButton.setOnClickListener {
             // Navigate to AddFoodFragment
             it.findNavController().navigate(R.id.action_calorieFragment_to_addFoodFragment)
+        }
+
+        // Set up the "Reset Foods" button click listener
+        binding.resetFoodButton.setOnClickListener {
+            viewModel.resetFoods()  // Reset the list of foods
+        }
+
+        // Set up the "Delete Food" button click listener
+        binding.deleteFoodButton.setOnClickListener {
+            // In this case, you would need some way to select which food to delete
+            // For now, we can assume a specific food item is selected
+            val foodToDelete = viewModel.calories.value?.get(0)  // Example: Delete the first food item
+            foodToDelete?.let {
+                viewModel.deleteFood(it)  // Delete the food
+            }
         }
     }
 

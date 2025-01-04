@@ -13,7 +13,9 @@ class UserViewModel:ViewModel() {
     val achievements: LiveData<List<Achievement>> = _achievements
     private val _calories = MutableLiveData<List<Calorie>>()
     val calories: LiveData<List<Calorie>> = _calories
-
+    // Mutable LiveData for total calories
+    private val _totalCalories = MutableLiveData<Int>()
+    val totalCalories: LiveData<Int> get() = _totalCalories
     init {
         // Initialize with dummy data
         _achievements.value = listOf(
@@ -30,6 +32,8 @@ class UserViewModel:ViewModel() {
             Calorie(1,"CannedFruit","Canned Blueberries",100,88),
             Calorie(2,"PotatoProducts","Rosemary Potatoes",100,93)
         )
+        updateTotalCalories()
+
 
     }
 
@@ -44,9 +48,6 @@ class UserViewModel:ViewModel() {
         }
     }
 
-    fun addFood(id: String, quantity: Int) {
-
-    }
     // Function to get an achievement by ID
     fun getAchievementById(id: Int): LiveData<Achievement?> {
         val achievementLiveData = MutableLiveData<Achievement?>()
@@ -63,10 +64,31 @@ class UserViewModel:ViewModel() {
         return calorieLiveData
     }
 
-    // Add a food to the list
+    // Add food to the list
     fun addFood(calorie: Calorie) {
         val currentList = _calories.value?.toMutableList() ?: mutableListOf()
         currentList.add(calorie)
         _calories.value = currentList
+        updateTotalCalories()
     }
+    // Delete a specific food by id
+    fun deleteFood(food: Calorie) {
+        val currentList = _calories.value?.toMutableList() ?: mutableListOf()
+        currentList.remove(food)
+        _calories.value = currentList
+        updateTotalCalories()
+    }
+
+    // Reset all foods (clear the list)
+    fun resetFoods() {
+        _calories.value = emptyList()
+        updateTotalCalories()
+    }
+
+    // Calculate and update the total calories
+    private fun updateTotalCalories() {
+        val total = _calories.value?.sumOf { it.cal } ?: 0
+        _totalCalories.value = total
+    }
+
 }
