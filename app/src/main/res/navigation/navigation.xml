@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.novnavex.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_CalculatorFragment"
+            app:destination="@id/CalculatorFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_achievementFragment"
+            app:destination="@id/achievementFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_calorieFragment"
+            app:destination="@id/calorieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CalculatorFragment"
+        android:name="com.example.novnavex.CalculatorFragment"
+        android:label="CalculatorFragment"
+        tools:layout="@layout/fragment_calculator">
+        <argument
+            android:name="userName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_CalculatorFragment_to_ResultFragment"
+            app:destination="@id/ResultFragment" />
+        <action
+            android:id="@+id/action_CalculatorFragment_to_achievementFragment"
+            app:destination="@id/achievementFragment" />
+        <action
+            android:id="@+id/action_CalculatorFragment_to_calorieFragment"
+            app:destination="@id/calorieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ResultFragment"
+        android:name="com.example.novnavex.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="dailyCalories"
+            app:argType="float" />
+        <action
+            android:id="@+id/action_ResultFragment_to_CalculatorFragment"
+            app:destination="@id/CalculatorFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/achievementFragment"
+        android:name="com.example.novnavex.AchievementFragment"
+        android:label="fragment_achievement"
+        tools:layout="@layout/fragment_achievement" >
+        <action
+            android:id="@+id/action_achievementFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_achievementFragment_to_CalculatorFragment"
+            app:destination="@id/CalculatorFragment" />
+        <action
+            android:id="@+id/action_achievementFragment_to_achievementDetailFragment"
+            app:destination="@id/achievementDetailFragment" />
+        <action
+            android:id="@+id/action_achievementFragment_to_calorieFragment"
+            app:destination="@id/calorieFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/calorieFragment"
+        android:name="com.example.novnavex.CalorieFragment"
+        android:label="fragment_calorie"
+        tools:layout="@layout/fragment_calorie" >
+        <action
+            android:id="@+id/action_calorieFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_calorieFragment_to_CalculatorFragment"
+            app:destination="@id/CalculatorFragment" />
+        <action
+            android:id="@+id/action_calorieFragment_to_achievementFragment"
+            app:destination="@id/achievementFragment" />
+        <action
+            android:id="@+id/action_calorieFragment_to_addFoodFragment"
+            app:destination="@id/addFoodFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/achievementDetailFragment"
+        android:name="com.example.novnavex.AchievementDetailFragment"
+        android:label="fragment_achievement_detail"
+        tools:layout="@layout/fragment_achievement_detail" >
+        <argument
+            android:name="achievementId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_achievementDetailFragment_to_achievementFragment"
+            app:destination="@id/achievementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.example.novnavex.AddFoodFragment"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" >
+
+        <action
+            android:id="@+id/action_addFoodFragment_to_calorieFragment"
+            app:destination="@id/calorieFragment" />
+    </fragment>
+</navigation>
