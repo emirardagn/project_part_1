@@ -33,6 +33,12 @@ class LoginActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+
+                        // ViewModel'i senkronize et
+                        val userViewModel: UserViewModel by viewModels()
+                        userViewModel.syncAchievementsWithFirestore()
+
+                        // Ana ekrana geç
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
@@ -49,4 +55,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+
 }
