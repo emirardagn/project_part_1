@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         val emailField = findViewById<EditText>(R.id.loginEmail)
         val passwordField = findViewById<EditText>(R.id.loginPassword)
         val loginButton = findViewById<Button>(R.id.loginButton)
-        val signupRedirectButton = findViewById<Button>(R.id.signupRedirectButton)
+        val signupRedirectButton = findViewById<TextView>(R.id.signupRedirectButton)
 
         loginButton.setOnClickListener {
             val email = emailField.text.toString()

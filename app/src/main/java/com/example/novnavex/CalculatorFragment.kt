@@ -5,14 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.novnavex.databinding.FragmentCalculatorBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class CalculatorFragment : Fragment() {
 
     private lateinit var binding: FragmentCalculatorBinding
+    private lateinit var db: FirebaseFirestore
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,11 +25,11 @@ class CalculatorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_calculator, container, false)
-        // Retrieve the username from the arguments
-        val username = arguments?.getString("userName") ?: "Guest"  // Default to "Guest" if null
 
-        // Use the username (e.g., set it in a TextView)
-        binding.greetingTextView.text = "Hello, $username"  // Assuming you have a TextView with id usernameTextView
+        // Firestore ve Firebase Auth başlat
+        db = FirebaseFirestore.getInstance()
+        auth = FirebaseAuth.getInstance()
+
         return binding.root
     }
 
@@ -37,14 +42,10 @@ class CalculatorFragment : Fragment() {
             android.R.layout.simple_spinner_item
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
         binding.spinnerActivity.adapter = adapter
 
-        val userName = arguments?.let {
-            CalculatorFragmentArgs.fromBundle(it).userName
-        }
-        binding.greetingTextView.text = "Hello, $userName!"
-
+        // Kullanıcı bilgilerini Firestore'dan çek
+        fetchUserFirstName()
 
         binding.buttonCalculate.setOnClickListener {
             val weight = binding.editWeight.text.toString().toDoubleOrNull()
@@ -76,5 +77,32 @@ class CalculatorFragment : Fragment() {
             val action = CalculatorFragmentDirections.actionCalculatorFragmentToResultFragment(dailyCalories.toFloat())
             findNavController().navigate(action)
         }
+    }
+
+    private fun fetchUserFirstName() {
+        // Kullanıcı ID'sini Firebase Authentication'dan al
+        val userId = auth.currentUser?.uid
+
+        if (userId == null) {
+            Toast.makeText(requireContext(), "User not logged in", Toast.LENGTH_SHORT).show()
+            binding.greetingTextView.text = "Hello, Guest!"
+            return
+        }
+
+        // Firestore sorgusu
+        db.collection("users").document(userId)
+            .get()
+            .addOnSuccessListener { document ->
+                if (document != null && document.exists()) {
+                    val firstName = document.getString("firstName") ?: "Guest"
+                    binding.greetingTextView.text = "Hello, $firstName!"
+                } else {
+                    binding.greetingTextView.text = "Hello, Guest!"
+                }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(requireContext(), "Failed to fetch user data: ${e.message}", Toast.LENGTH_SHORT).show()
+                binding.greetingTextView.text = "Hello, Guest!"
+            }
     }
 }

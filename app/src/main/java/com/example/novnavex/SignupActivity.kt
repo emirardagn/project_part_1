@@ -33,6 +33,8 @@ class SignupActivity : AppCompatActivity() {
             val lastName = lastNameField.text.toString()
             val email = emailField.text.toString()
             val password = passwordField.text.toString()
+            val daily_calorie = 0;
+            val achievement_list = arrayListOf<String>();
 
             if (firstName.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
@@ -42,7 +44,9 @@ class SignupActivity : AppCompatActivity() {
                             "firstName" to firstName,
                             "lastName" to lastName,
                             "email" to email,
-                            "userId" to userId
+                            "userId" to userId,
+                            "daily_calorie" to daily_calorie,
+                            "achievement_list" to achievement_list
                         )
                         // Firestore'da "users" koleksiyonuna kaydet
                         firestore.collection("users").document(userId!!).set(user)
