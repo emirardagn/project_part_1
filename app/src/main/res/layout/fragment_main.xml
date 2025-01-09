@@ -19,7 +19,7 @@
             android:id="@+id/quoteTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Whenever you're about to give up,\nremember why you started."
+            android:text="'' Whenever you're about to give up,\nremember why you started. ''"
             android:textSize="28sp"
             android:textColor="#FFFFFF"
             android:textStyle="italic"

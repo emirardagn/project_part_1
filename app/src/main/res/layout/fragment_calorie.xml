@@ -15,23 +15,24 @@
 
             <!-- Total Calories TextView -->
             <TextView
-                android:id="@+id/total_calories_textView"
+                android:id="@+id/totalCaloriesTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total Calories: 0"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:padding="16dp" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- RecyclerView -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/calorie_recycler_view"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="@id/total_calories_textView"
+                app:layout_constraintTop_toBottomOf="@id/totalCaloriesTextView"
                 app:layout_constraintBottom_toTopOf="@+id/add_food_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,8 +1,10 @@
 package com.example.novnavex
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.novnavex.data.Calorie
 import com.example.novnavex.databinding.ItemFoodBinding
@@ -42,6 +44,7 @@ class FoodListAdapter(
     }
 
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
+        holder.itemView.findViewById<TextView>(R.id.food_info).setTextColor(Color.WHITE)
         holder.bind(foodList[position], position == selectedPosition)
     }
 
