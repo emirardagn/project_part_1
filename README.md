@@ -20,9 +20,6 @@ A Kotlin-based Android application designed to help users track their fitness ac
   - Cloud Storage: For storing profile images and other media.
 - **MVVM Architecture**: For a clean and maintainable codebase.
 
-## Screenshots
-
-*Include screenshots or GIFs of your app here to showcase its functionality.*
 
 ## Installation
 
