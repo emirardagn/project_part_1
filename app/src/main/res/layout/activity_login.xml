@@ -1,65 +1,105 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center"
-    android:background="@android:color/white">
+    android:background="#435175">
 
-    <!-- Email Input -->
-    <EditText
-        android:id="@+id/loginEmail"
-        android:layout_width="match_parent"
+    <!-- App Logo ve İsmi -->
+    <TextView
+        android:id="@+id/appNameText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:padding="12dp"
-        android:hint="Email"
-        android:textSize="16sp"
-        android:background="@android:color/white"
-        android:inputType="textEmailAddress"
-        android:elevation="2dp" />
+        android:text="GYM APP"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"
+        android:letterSpacing="0.1"
+        android:elevation="4dp"
+        android:fontFamily="@font/russoone"/>
 
-    <!-- Password Input -->
-    <EditText
-        android:id="@+id/loginPassword"
+    <!-- GIF Animasyonu -->
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/benchpress"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Email Input - Material Design -->
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:padding="12dp"
-        android:hint="Password"
-        android:textSize="16sp"
-        android:background="@android:color/white"
-        android:inputType="textPassword"
-        android:elevation="2dp" />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:textColorHint="#FFFFFF"
+        app:boxStrokeColor="#FFFFFF"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:hintTextColor="#FFFFFF">
 
-    <!-- Login Button -->
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textColorLink="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password Input - Material Design -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:textColorHint="#FFFFFF"
+        app:boxStrokeColor="#FFFFFF"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:hintTextColor="#FFFFFF"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#FFFFFF">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:inputType="textPassword"
+            android:backgroundTint="@android:color/transparent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Login Button - Material Design -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:padding="12dp"
         android:text="Login"
-        android:textSize="18sp"
+        android:textSize="16sp"
+        android:padding="12dp"
         android:textStyle="bold"
-        android:textColor="@android:color/white" />
+        app:cornerRadius="8dp"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#435175"
+        android:layout_marginBottom="16dp"/>
 
-    <!-- Signup Redirect Button -->
+    <!-- Signup Redirect Text -->
     <TextView
         android:id="@+id/signupRedirectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="center_horizontal"
-        android:padding="8dp"
         android:text="Don't have an account? Sign up!"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/holo_blue_dark"
-        android:gravity="center"
-        android:background="?attr/selectableItemBackground"
+        android:padding="8dp"
         android:clickable="true"
-        android:focusable="true" />
+        android:focusable="true"/>
 
 </LinearLayout>

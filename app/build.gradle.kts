@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.recyclerview)
     implementation("com.google.android.material:material:1.12.0")
+    implementation(libs.firebase.auth.ktx)
     annotationProcessor(libs.compiler)
     // Firebase Dependencies
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
@@ -72,4 +73,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
 }
