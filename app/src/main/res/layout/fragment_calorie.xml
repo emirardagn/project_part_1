@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <variable
+            name="viewModel"
+            type="com.example.novnavex.viewmodel.UserViewModel" />
     </data>
     <FrameLayout
         android:layout_width="match_parent"
@@ -38,7 +41,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:submitList="@{viewModel.calories}"/>
 
             <!-- Add Food Button -->
             <com.google.android.material.button.MaterialButton
