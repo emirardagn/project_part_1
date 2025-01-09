@@ -9,7 +9,6 @@ A Kotlin-based Android application designed to help users track their fitness ac
 - **Fitness Achievements**: Monitor and track workout progress and milestones.
 - **Data Synchronization**: Real-time storage and synchronization using Firebase Firestore.
 - **User-Friendly UI**: Intuitive interface for logging meals and workouts.
-- **Analytics Dashboard**: View graphical summaries of calorie consumption and fitness progress.
 
 ## Tech Stack
 
