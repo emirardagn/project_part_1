@@ -1,132 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#435175"
     tools:context=".MainActivity">
 
-    <!-- Top Layout -->
-    <LinearLayout
-        android:id="@+id/topLayout"
-        android:layout_width="0dp"
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/appNameText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/light_gray"
-        android:padding="16dp"
+        android:text="GYM APP"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="24dp"
+        android:letterSpacing="0.1"
+        android:elevation="4dp"
+        android:fontFamily="@font/russoone"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <!-- Horizontal Layout for Image and App Name -->
+    <!-- Modern Navigation Bar -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/appNameText">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/primary"
-            android:padding="12dp"
-            android:elevation="4dp"
-            android:layout_marginBottom="8dp">
-            <Button
-                android:id="@+id/logoutButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Logout"
-                android:layout_margin="16dp"
-                android:background="@color/primary"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:elevation="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <!-- App Logo/Image -->
-            <ImageView
-                android:id="@+id/appLogo"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/gym_image"
-                android:contentDescription="GYM_LOGO"
-                android:layout_marginEnd="8dp" />
-
-            <!-- App Name -->
-            <TextView
-                android:id="@+id/app_name_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="GYM APP"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:padding="12dp"
-                android:elevation="4dp"
-                android:layout_marginBottom="8dp" />
-        </LinearLayout>
-
-        <!-- Buttons Layout -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/white"
+            android:background="#FFFFFF"
+            android:gravity="center"
             android:padding="8dp"
-            android:elevation="4dp"
-            android:layout_marginBottom="16dp"
-            android:weightSum="4">
+            android:weightSum="5">
 
             <!-- Home Button -->
-            <Button
-                android:id="@+id/mainButton"
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Home"
-                android:textSize="14sp"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:layout_margin="4dp"
-                android:drawablePadding="8dp" />
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/mainButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_home"
+                    android:padding="12dp"
+                    android:contentDescription="Home"
+                    app:tint="#435175" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:textColor="#435175"
+                    android:textSize="12sp"/>
+            </LinearLayout>
 
             <!-- Calculator Button -->
-            <Button
-                android:id="@+id/calculatorButton"
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Calculator"
-                android:textSize="14sp"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:layout_margin="4dp"
-                android:drawablePadding="8dp" />
+                android:orientation="vertical"
+                android:gravity="center">
 
-            <!-- Achievements Button -->
-            <Button
-                android:id="@+id/achievementButton"
+                <ImageButton
+                    android:id="@+id/calculatorButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_calculator"
+                    android:padding="12dp"
+                    android:contentDescription="Calculator"
+                    app:tint="#435175" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calculator"
+                    android:textColor="#435175"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <!-- Achievement Button -->
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Achievements"
-                android:textSize="14sp"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:layout_margin="4dp" />
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/achievementButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_achievement"
+                    android:padding="12dp"
+                    android:contentDescription="Achievement"
+                    app:tint="#435175" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Achievement"
+                    android:textColor="#435175"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
             <!-- Calorie Button -->
-            <Button
-                android:id="@+id/calorieButton"
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Calorie"
-                android:textSize="14sp"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:layout_margin="4dp"
-                android:drawablePadding="8dp" />
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/calorieButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_calorie"
+                    android:padding="12dp"
+                    android:contentDescription="Calorie"
+                    app:tint="#435175" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calories"
+                    android:textColor="#435175"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <!-- Logout Button -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/logoutButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_logout"
+                    android:padding="12dp"
+                    android:contentDescription="Logout"
+                    app:tint="#435175" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:textColor="#435175"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Navigation Host -->
     <androidx.fragment.app.FragmentContainerView
@@ -135,11 +186,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintTop_toBottomOf="@+id/topLayout"
+        app:layout_constraintTop_toBottomOf="@id/navBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:navGraph="@navigation/navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

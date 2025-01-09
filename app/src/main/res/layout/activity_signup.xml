@@ -1,86 +1,149 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
+    android:background="#435175"
     android:gravity="center"
-    android:background="@android:color/white">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- First Name Field -->
-    <EditText
-        android:id="@+id/signupFirstName"
+    <!-- Back Arrow -->
+
+
+    <!-- App Logo ve İsmi -->
+
+    <TextView
+        android:id="@+id/appNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:elevation="4dp"
+        android:fontFamily="@font/russoone"
+        android:letterSpacing="0.1"
+        android:text="GYM APP"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <!-- First Name Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:padding="12dp"
-        android:hint="First Name"
-        android:textSize="16sp"
-        android:inputType="textPersonName"
-        android:background="@android:color/white"
-        android:elevation="2dp" />
+        android:textColorHint="#FFFFFF"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="#FFFFFF"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="#FFFFFF">
 
-    <!-- Last Name Field -->
-    <EditText
-        android:id="@+id/signupLastName"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signupFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="First Name"
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Last Name Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:padding="12dp"
-        android:hint="Last Name"
-        android:textSize="16sp"
-        android:inputType="textPersonName"
-        android:background="@android:color/white"
-        android:elevation="2dp" />
+        android:textColorHint="#FFFFFF"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="#FFFFFF"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="#FFFFFF">
 
-    <!-- Email Field -->
-    <EditText
-        android:id="@+id/signupEmail"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signupLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Last Name"
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Email Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:padding="12dp"
-        android:hint="Email"
-        android:textSize="16sp"
-        android:inputType="textEmailAddress"
-        android:background="@android:color/white"
-        android:elevation="2dp" />
+        android:textColorHint="#FFFFFF"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="#FFFFFF"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="#FFFFFF">
 
-    <!-- Password Field -->
-    <EditText
-        android:id="@+id/signupPassword"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signupEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:padding="12dp"
-        android:hint="Password"
-        android:textSize="16sp"
-        android:inputType="textPassword"
-        android:background="@android:color/white"
-        android:elevation="2dp" />
+        android:layout_marginBottom="24dp"
+        android:textColorHint="#FFFFFF"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="#FFFFFF"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="#FFFFFF"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#FFFFFF">
 
-    <!-- Signup Button -->
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signupPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Sign-Up Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/signupButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFFFFF"
         android:padding="12dp"
         android:text="Sign-Up"
-        android:textSize="18sp"
+        android:textColor="#435175"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@android:color/white" />
+        app:cornerRadius="8dp" />
 
     <!-- Login Redirect Button -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/loginRedirectButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
         android:padding="12dp"
         android:text="Go to Login"
-        android:textSize="18sp"
+        android:textColor="#435175"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@android:color/white" />
+        app:cornerRadius="8dp" />
 
 </LinearLayout>

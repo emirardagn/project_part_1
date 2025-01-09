@@ -35,7 +35,7 @@ class MainFragment : Fragment() {
         // Observe the username and update the UI
         viewModel.userName.observe(viewLifecycleOwner, Observer { username ->
             // Display the username in a TextView or any other UI component
-            binding.helloTextView.text = "Hello, $username"  // Assuming you have a TextView with id helloTextView
+            //binding.helloTextView.text = "Hello, $username"  // Assuming you have a TextView with id helloTextView
         })
 
 

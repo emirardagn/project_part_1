@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-    <variable
-    name="viewModel"
-    type="com.example.novnavex.viewmodel.UserViewModel" />
+        <variable
+            name="viewModel"
+            type="com.example.novnavex.viewmodel.UserViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#435175"
         tools:context=".MainFragment">
 
-        <!-- Display "Hello, username" -->
         <TextView
-            android:id="@+id/helloTextView"
-            android:layout_width="wrap_content"
+            android:id="@+id/quoteTextView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Hello, This is Main Page, we will add some content about gym in final project"
-            app:layout_constraintTop_toTopOf="parent"
+            android:text="Whenever you're about to give up,\nremember why you started."
+            android:textSize="28sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="italic"
+            android:fontFamily="@font/playfair_display_italic"
+            android:gravity="center"
+            android:lineSpacingExtra="8dp"
+            android:padding="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="18sp"
-            />
-
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
