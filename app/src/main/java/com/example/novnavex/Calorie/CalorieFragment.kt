@@ -1,5 +1,5 @@
 
-package com.example.novnavex
+package com.example.novnavex.Calorie
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.novnavex.R
 import com.example.novnavex.databinding.FragmentCalorieBinding
 import com.example.novnavex.viewmodel.UserViewModel
 import  com.example.novnavex.adapter.CalorieListAdapter

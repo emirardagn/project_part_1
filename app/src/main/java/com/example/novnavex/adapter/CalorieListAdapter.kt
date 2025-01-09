@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.novnavex.MyDiffCallback
+import com.example.novnavex.Utils.MyDiffCallback
 import com.example.novnavex.R
 import com.example.novnavex.data.Calorie
 import com.example.novnavex.databinding.ItemCalorieBinding

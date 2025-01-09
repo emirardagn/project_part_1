@@ -1,6 +1,7 @@
-package com.example.novnavex
+package com.example.novnavex.Utils
 
 import android.content.Context
+import com.example.novnavex.R
 import com.example.novnavex.data.Calorie
 import com.opencsv.CSVReader
 import java.io.InputStreamReader

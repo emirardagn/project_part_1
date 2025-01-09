@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:padding="16dp"
         android:background="#435175"
-        tools:context=".AddFoodFragment">
+        tools:context=".Calorie.AddFoodFragment">
 
         <!-- RecyclerView for Food Selection -->
         <androidx.recyclerview.widget.RecyclerView

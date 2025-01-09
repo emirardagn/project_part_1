@@ -1,4 +1,4 @@
-package com.example.novnavex
+package com.example.novnavex.Utils
 
 import androidx.recyclerview.widget.DiffUtil
 import com.example.novnavex.data.Calorie

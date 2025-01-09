@@ -1,4 +1,4 @@
-package com.example.novnavex
+package com.example.novnavex.Calorie
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.novnavex.FoodListAdapter
 import com.example.novnavex.data.Calorie
 import com.example.novnavex.databinding.FragmentAddFoodBinding
+import com.example.novnavex.Utils.readCalorieDataFromRaw
 import com.example.novnavex.viewmodel.UserViewModel
 
 class AddFoodFragment : Fragment() {

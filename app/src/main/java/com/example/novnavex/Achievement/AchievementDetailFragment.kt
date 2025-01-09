@@ -1,4 +1,4 @@
-package com.example.novnavex
+package com.example.novnavex.Achievement
 
 import android.graphics.Color
 import android.os.Bundle
@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.novnavex.Achievement.AchievementDetailFragmentArgs
+import com.example.novnavex.R
 import com.example.novnavex.databinding.FragmentAchievementDetailBinding
 import com.example.novnavex.viewmodel.UserViewModel
 import com.google.firebase.auth.FirebaseAuth

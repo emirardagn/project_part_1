@@ -1,4 +1,4 @@
-package com.example.novnavex
+package com.example.novnavex.Achievement
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.novnavex.data.Achievement
+import com.example.novnavex.Achievement.AchievementFragmentDirections
+import com.example.novnavex.R
 import com.example.novnavex.databinding.FragmentAchievementBinding
 import com.example.novnavex.viewmodel.UserViewModel
 import  com.example.novnavex.adapter.AchievementListAdapter
@@ -40,8 +40,10 @@ class AchievementFragment : Fragment() {
         // Observe achievements data from ViewModel
         viewModel.achievements.observe(viewLifecycleOwner) { achievements ->
             val adapter = AchievementListAdapter(achievements) { achievement ->
-                val action = AchievementFragmentDirections
-                    .actionAchievementFragmentToAchievementDetailFragment(achievement.id)
+                val action =
+                    AchievementFragmentDirections.actionAchievementFragmentToAchievementDetailFragment(
+                        achievement.id
+                    )
                 view.findNavController().navigate(action)
             }
 

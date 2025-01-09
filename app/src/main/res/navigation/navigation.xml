@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/CalculatorFragment"
-        android:name="com.example.novnavex.CalculatorFragment"
+        android:name="com.example.novnavex.Calculator.CalculatorFragment"
         android:label="CalculatorFragment"
         tools:layout="@layout/fragment_calculator">
         <argument
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/ResultFragment"
-        android:name="com.example.novnavex.ResultFragment"
+        android:name="com.example.novnavex.Calculator.ResultFragment"
         android:label="ResultFragment"
         tools:layout="@layout/fragment_result">
         <argument
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/achievementFragment"
-        android:name="com.example.novnavex.AchievementFragment"
+        android:name="com.example.novnavex.Achievement.AchievementFragment"
         android:label="fragment_achievement"
         tools:layout="@layout/fragment_achievement" >
         <action
@@ -75,7 +75,7 @@
 
     <fragment
         android:id="@+id/calorieFragment"
-        android:name="com.example.novnavex.CalorieFragment"
+        android:name="com.example.novnavex.Calorie.CalorieFragment"
         android:label="fragment_calorie"
         tools:layout="@layout/fragment_calorie" >
         <action
@@ -94,7 +94,7 @@
 
     <fragment
         android:id="@+id/achievementDetailFragment"
-        android:name="com.example.novnavex.AchievementDetailFragment"
+        android:name="com.example.novnavex.Achievement.AchievementDetailFragment"
         android:label="fragment_achievement_detail"
         tools:layout="@layout/fragment_achievement_detail" >
         <argument
@@ -106,7 +106,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFoodFragment"
-        android:name="com.example.novnavex.AddFoodFragment"
+        android:name="com.example.novnavex.Calorie.AddFoodFragment"
         android:label="fragment_add_food"
         tools:layout="@layout/fragment_add_food" >
 

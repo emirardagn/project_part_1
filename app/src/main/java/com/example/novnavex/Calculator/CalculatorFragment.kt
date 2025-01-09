@@ -1,4 +1,4 @@
-package com.example.novnavex
+package com.example.novnavex.Calculator
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.novnavex.Calculator.CalculatorFragmentDirections
+import com.example.novnavex.R
 import com.example.novnavex.databinding.FragmentCalculatorBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -74,7 +76,8 @@ class CalculatorFragment : Fragment() {
 
             val dailyCalories = bmr * activityLevel
 
-            val action = CalculatorFragmentDirections.actionCalculatorFragmentToResultFragment(dailyCalories.toFloat())
+            val action =
+                CalculatorFragmentDirections.actionCalculatorFragmentToResultFragment(dailyCalories.toFloat())
             findNavController().navigate(action)
         }
     }

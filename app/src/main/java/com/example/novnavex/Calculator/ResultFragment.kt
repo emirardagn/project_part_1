@@ -1,4 +1,4 @@
-package com.example.novnavex
+package com.example.novnavex.Calculator
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.example.novnavex.R
+import com.example.novnavex.Calculator.ResultFragmentArgs
 import com.example.novnavex.databinding.FragmentResultBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
