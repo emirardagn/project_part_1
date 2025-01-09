@@ -39,16 +39,16 @@ class AchievementListAdapter(
             // Set the color of the achievement's status
             when (achievement.status) {
                 "Done" -> {
-                    binding.achievementStatus.setTextColor(Color.GREEN) // Set color to green for Done
+                    binding.achievementStatus.setTextColor(Color.parseColor("#4CAF50")) // Yumuşak yeşil (Done)
                 }
                 "Pending" -> {
-                    binding.achievementStatus.setTextColor(Color.MAGENTA) // Set color to yellow for Pending
+                    binding.achievementStatus.setTextColor(Color.parseColor("#FFC107")) // Yumuşak turuncu (Pending)
                 }
                 "Not Taken" -> {
-                    binding.achievementStatus.setTextColor(Color.RED) // Set color to red for Not Taken
+                    binding.achievementStatus.setTextColor(Color.parseColor("#B0BEC5")) // Gri-mavi (Not Taken)
                 }
                 else -> {
-                    binding.achievementStatus.setTextColor(Color.GRAY) // Default color
+                    binding.achievementStatus.setTextColor(Color.parseColor("#9E9E9E")) // Varsayılan gri (Default)
                 }
             }
 

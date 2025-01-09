@@ -60,9 +60,9 @@ class AchievementDetailFragment : Fragment() {
                     // Status rengini ayarla
                     binding.achievementStatus.setTextColor(
                         when (achievement.status) {
-                            "Done" -> Color.GREEN
-                            "Pending" -> Color.MAGENTA
-                            else -> Color.GRAY
+                            "Done" -> Color.parseColor("#4CAF50")      // Yumuşak yeşil
+                            "Pending" -> Color.parseColor("#FFC107")   // Yumuşak turuncu
+                            else -> Color.parseColor("#B0BEC5")        // Gri-mavi
                         }
                     )
 
